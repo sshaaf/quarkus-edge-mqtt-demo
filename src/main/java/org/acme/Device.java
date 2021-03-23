@@ -1,16 +1,17 @@
 package org.acme;
 
+import io.vertx.core.json.Json;
+
 import java.util.Random;
 
-public class DeviceData {
+public class Device {
 
     private String deviceName = null;
-    private double humidity = 0.0f;
-    private double temp = 0.0f;
-
+    private int humidity = 0;
+    private int temp = 0;
     private Random random = new Random();
 
-    public DeviceData(String deviceName) {
+    public Device(String deviceName) {
         this.deviceName = deviceName;
     }
 
@@ -22,23 +23,31 @@ public class DeviceData {
         this.deviceName = deviceName;
     }
 
-    public double getHumidity() {
-        return humidity;
+    public int getHumidity() {
+        int min = 50;
+        int max = 100;
+        return (int) (Math.random() * (max - min)) + min;
+        //return random.nextInt((max-min)+min);
+
     }
 
-    public void setHumidity(double humidity) {
+    public void setHumidity(int humidity) {
         this.humidity = humidity;
     }
 
-    public double getTemp() {
-        int min = -40;
+    public int getTemp() {
+        int min = 10;
         int max = 50;
-        int randomInt = random.nextInt((min -max )+1);
-        float temp = randomInt / 1000.00f;
-        return temp;
+        return (int) (Math.random() * (max - min)) + min;
     }
 
-    public void setTemp(double temp) {
+    public void setTemp(int temp) {
         this.temp = temp;
     }
+
+    @Override
+    public String toString(){
+        return Json.encode(this);
+    }
+
 }

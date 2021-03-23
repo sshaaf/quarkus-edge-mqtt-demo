@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@patternfly/patternfly/patternfly.css"
+            crossorigin="anonymous"
+    >
+    <title>Edge Device</title>
+    <script src="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+        canvas{
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-pf" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="brand.png" alt="ACME Edge Machine" />
+        </a>
+
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+
+            <li class="dropdown">
+                <button class="btn btn-link nav-item-iconic" id="horizontalDropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span title="Help" class="fa pficon-help dropdown-title"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="horizontalDropdownMenu1">
+                    <li><a href="#0">Help</a></li>
+                    <li><a href="#0">About</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    <span class="pficon pficon-user"></span>
+                    <span class="dropdown-title">
+            Syed Shaaf <b class="caret"></b>
+          </span>
+                </button>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+            <li>
+                <a href="#0">Devices</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+
+    <!-- Just enjoy various PatternFly components -->
+    <div class="alert alert-success">
+        <span class="pficon pficon-ok"></span>
+        <strong>Incoming!</strong> data from e7, Copenhagen, Denmark <a href="#" class="alert-link"></a>.
+    </div>
+
+    <div style="width:100%;">
+        <canvas id="canvas"></canvas>
+    </div>
+    <br>
+    <br>
+    <script src='./plot.js'></script>
+    <table class="pf-c-table pf-m-grid-md" role="grid" id="device-table">
+        <caption>Realtime data</caption>
+        <thead>
+        <tr role="row">
+            <th role="columnheader" scope="col">Device Name</th>
+            <th role="columnheader" scope="col">Temperature</th>
+            <th role="columnheader" scope="col">Humidity</th>
+            <th role="columnheader" scope="col">Reading</th>
+        </tr>
+        </thead>
+        <tbody role="rowgroup" id="tempBody">
+        </tbody>
+    </table>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
+</body>
+</html>
+
