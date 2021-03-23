@@ -59,7 +59,7 @@ eclipse-mosquitto:1.6.2
 ```
 
 ### Devices
-The device in this case an emulated one ESP2866-1 that throws Temperature and heat as a Json into the MQTT broker.
+The device in this case an emulated one ESP8266-01 that throws Temperature and heat as a Json into the MQTT broker.
 That is then picked up as a reactive channel and throws that data out after processing into the stream. 
 The stream is read by the browser and displays the data in realtime. 
 Its a very basic demo. The emulated device can easily be changed to a real one, however the data thrown should be in the correct Json format.
