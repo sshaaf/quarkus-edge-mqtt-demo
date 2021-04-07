@@ -7,16 +7,16 @@ var config = {
         labels: xAxis,
         datasets: [{
             label: 'Temperature',
-            backgroundColor: window.chartColors.red,
-            borderColor: window.chartColors.red,
+            backgroundColor: 'red',
+            borderColor: 'red',
             data: [
             ],
             fill: false,
         }, {
             label: 'Humidity',
             fill: false,
-            backgroundColor: window.chartColors.blue,
-            borderColor: window.chartColors.blue,
+            backgroundColor: 'blue',
+            borderColor: 'blue',
             data: [
             ],
         }]
