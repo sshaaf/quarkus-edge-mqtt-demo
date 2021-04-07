@@ -47,7 +47,7 @@ public class Device {
 
     @Override
     public String toString(){
-        return Json.encode(this);
+        return "{\"deviceName\":\""+deviceName+"\",\"humidity\":"+getHumidity()+",\"temp\":"+getTemp()+"}";
     }
 
 }
